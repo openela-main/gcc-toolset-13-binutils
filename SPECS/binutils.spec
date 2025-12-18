@@ -9,7 +9,7 @@ BuildRequires: scl-utils-build
 Summary: A GNU collection of binary utilities
 Name: %{?scl_prefix}binutils
 Version: 2.40
-Release: 21%{?dist}
+Release: 21%{?dist}.1
 License: GPLv3+
 URL: https://sourceware.org/binutils
 
@@ -280,6 +280,11 @@ Patch21: binutils-CVE-2023-1972.patch
 # Purpose:  Add support for AMD's znver5 architecture extension.
 # Lifetime: Fixed in 2.42
 Patch22: binutils-AMD-znver5.patch
+
+# Purpose:  Stops a potential illegal memory access when linking a corrupt
+#            input file.  PR 33457
+# Lifetime: Fixed in 2.46
+Patch23: binutils-CVE-2025-11083.patch
 
 #----------------------------------------------------------------------------
 
@@ -1313,6 +1318,9 @@ exit 0
 
 #----------------------------------------------------------------------------
 %changelog
+* Thu Nov 27 2025 Nick Clifton  <nickc@redhat.com> - 2.40-21.1
+- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130652)
+
 * Thu Feb 22 2024 Nick Clifton  <nickc@redhat.com> - 2.40-21
 - Run x86_64 assembler tests for znver5 architecture extension.  (RHEL-23798)
 
