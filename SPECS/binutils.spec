@@ -9,7 +9,7 @@ BuildRequires: scl-utils-build
 Summary: A GNU collection of binary utilities
 Name: %{?scl_prefix}binutils
 Version: 2.40
-Release: 21%{?dist}.1
+Release: 22%{?dist}
 License: GPLv3+
 URL: https://sourceware.org/binutils
 
@@ -1318,8 +1318,8 @@ exit 0
 
 #----------------------------------------------------------------------------
 %changelog
-* Thu Nov 27 2025 Nick Clifton  <nickc@redhat.com> - 2.40-21.1
-- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130652)
+* Thu Nov 27 2025 Nick Clifton  <nickc@redhat.com> - 2.40-22
+- Fix a potential illegal memory access when linking a corrupt input file.  (RHEL-130655)
 
 * Thu Feb 22 2024 Nick Clifton  <nickc@redhat.com> - 2.40-21
 - Run x86_64 assembler tests for znver5 architecture extension.  (RHEL-23798)
